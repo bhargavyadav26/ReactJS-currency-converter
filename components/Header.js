@@ -22,7 +22,7 @@ class HeaderComp extends React.Component {
         const { children } = this.props;
         return (
             <Container>
-            <Segment inverted>
+            <Segment inverted attached="top">
                 <Header textAlign="center">
                     Currency Converter
                 </Header>
