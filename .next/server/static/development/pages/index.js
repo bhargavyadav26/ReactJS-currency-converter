@@ -172,30 +172,141 @@ class HeaderComp extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
-/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__);
+
 var _jsxFileName = "D:\\my-projects\\civil\\components\\Home.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
 
 
 
-class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+
+class Home extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "firstDD", (event, {
+      value
+    }) => {
+      const {
+        firstCurr,
+        secondCurr,
+        date
+      } = this.state;
+      console.log("firstDD", event.target, {
+        value
+      });
+      this.setState({
+        firstCurr: value
+      });
+
+      if ({
+        value
+      } !== '' && secondCurr !== '') {
+        axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`https://api.exchangeratesapi.io/latest?symbols=${value},${secondCurr}&base=${value}`).then(res => {
+          console.log("res ", res);
+          this.setState({
+            exchangeData: res.data
+          });
+        }).catch(error => {
+          console.log(error);
+        });
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "secondDD", (event, {
+      value
+    }) => {
+      const {
+        firstCurr,
+        secondCurr,
+        date
+      } = this.state;
+      console.log("secondDD", value);
+      this.setState({
+        secondCurr: value
+      });
+
+      if (firstCurr !== '' && {
+        value
+      } !== '') {
+        axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`https://api.ratesapi.io/api/latest?symbols=${firstCurr},${value}&base=${firstCurr}`).then(res => {
+          console.log("res ", res);
+          this.setState({
+            exchangeData: res.data
+          });
+        }).catch(error => {
+          console.log(error);
+        });
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "firstValue", event => {
+      console.log("firstValue", event.target.value);
+      this.setState({
+        firstValue: event.target.value
+      });
+      const calc2 = event.target.value * this.state.exchangeData.rates[this.state.secondCurr];
+      console.log("calc2 ", calc2);
+      this.setState({
+        secondValue: calc2
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "secondValue", event => {
+      console.log("secondValue", event.target.value);
+      this.setState({
+        secondValue: event.target.value
+      });
+      const calc1 = event.target.value / this.state.exchangeData.rates[this.state.secondCurr];
+      console.log("calc1 ", calc1);
+      this.setState({
+        firstValue: calc1
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onExchangeClick", () => {
+      const {
+        firstCurr,
+        secondCurr,
+        firstValue,
+        secondValue
+      } = this.state;
+      let firstCurrConst = firstCurr;
+      let secondCurrConst = secondCurr;
+      let firstValueConst = firstValue;
+      let secondValueConst = secondValue;
+      this.setState({
+        firstCurr: secondCurrConst,
+        secondCurr: firstCurrConst,
+        firstValue: secondValueConst,
+        secondValue: firstValueConst
+      });
+    });
+
     this.state = {
       totalData: [],
-      options: []
+      options: [],
+      firstCurr: '',
+      secondCurr: '',
+      firstValue: 0,
+      secondValue: 0,
+      date: '',
+      exchangeData: []
     };
   }
 
@@ -205,7 +316,15 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       totalData
     } = this.state;
     const options = [];
-    axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://restcountries.eu/rest/v2/all').then(({
+    let date = new Date();
+    date.setDate(date.getDate() - 1);
+    console.log("date ", date);
+    date = date.toISOString().split('T')[0];
+    console.log("after-date ", date);
+    this.setState({
+      date
+    });
+    axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('https://restcountries.eu/rest/v2/all').then(({
       data
     }) => {
       this.setState({
@@ -226,110 +345,190 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
   render() {
     console.log("home");
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
-      width: 16,
+    return __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 132
       },
       __self: this
-    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Grid"].Row, {
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Segment"].Group, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 133
       },
       __self: this
-    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Grid"].Column, {
-      width: 1,
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Segment"], {
+      clearing: true,
+      inverted: true,
+      color: "violet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 134
       },
       __self: this
-    }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Grid"].Column, {
-      width: 4,
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 135
       },
       __self: this
-    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Input"], {
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"].Row, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 136
       },
       __self: this
-    })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Grid"].Column, {
-      width: 4,
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"].Column, {
+      textAlign: "center",
+      width: 7,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 137
       },
       __self: this
-    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Dropdown"], {
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Dropdown"], {
       placeholder: "select",
       options: this.state.options,
       selection: true,
       clearable: true,
       search: true,
+      onChange: (e, {
+        value
+      }) => this.firstDD(e, {
+        value
+      }),
+      value: this.state.firstCurr,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 138
       },
       __self: this
-    })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Grid"].Column, {
+    })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"].Column, {
+      textAlign: "center",
+      verticalAlign: "middle",
       width: 2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 140
       },
       __self: this
-    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
-      name: "arrow right",
-      size: "big",
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+      color: "violet",
+      icon: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 141
       },
       __self: this
-    })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Grid"].Column, {
-      width: 4,
+    }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__["FaExchangeAlt"], {
+      onClick: this.onExchangeClick,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 142
       },
       __self: this
-    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Dropdown"], {
+    }))), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"].Column, {
+      textAlign: "center",
+      width: 7,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Dropdown"], {
       placeholder: "select",
       options: this.state.options,
       selection: true,
       clearable: true,
       search: true,
+      onChange: this.secondDD,
+      value: this.state.secondCurr,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 146
       },
       __self: this
-    })))));
+    }))))), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Segment"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 151
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 152
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"].Row, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 153
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"].Column, {
+      textAlign: "center",
+      width: 7,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 154
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Input"], {
+      onChange: this.firstValue,
+      value: this.state.firstValue,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 155
+      },
+      __self: this
+    })), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"].Column, {
+      textAlign: "center",
+      verticalAlign: "middle",
+      width: 2,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 157
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+      positive: true,
+      icon: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 158
+      },
+      __self: this
+    }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__["FaExchangeAlt"], {
+      onClick: this.onExchangeClick,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 159
+      },
+      __self: this
+    }))), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Grid"].Column, {
+      textAlign: "center",
+      width: 7,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 162
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_4__["Input"], {
+      onChange: this.secondValue,
+      value: this.state.secondValue,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 163
+      },
+      __self: this
+    })))))));
   }
 
 }
 
-const options = [{
-  key: 1,
-  text: 'Feet',
-  value: 1
-}, {
-  key: 2,
-  text: 'Meter',
-  value: 2
-}, {
-  key: 3,
-  text: 'Inch',
-  value: 3
-}];
 const mapDispatchToProps = {};
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Home));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Home));
 
 /***/ }),
 
@@ -440,6 +639,36 @@ module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
 
 /***/ }),
 
@@ -2363,6 +2592,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-icons/fa":
+/*!*********************************!*\
+  !*** external "react-icons/fa" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/fa");
 
 /***/ }),
 
