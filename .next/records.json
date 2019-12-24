@@ -1,0 +1,62 @@
+{
+  "mini-css-extract-plugin node_modules/@zeit/next-css/node_modules/css-loader/index.js??ref--5-1!node_modules/semantic-ui-css/semantic.min.css": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "css node_modules/@zeit/next-css/node_modules/css-loader/index.js??ref--5-1!node_modules/semantic-ui-css/semantic.min.css 0": 0,
+      "css node_modules/@zeit/next-css/node_modules/css-loader/index.js??ref--5-1!node_modules/semantic-ui-css/semantic.min.css 1": 1
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1
+    }
+  },
+  "chunks": {
+    "byName": {
+      "commons": 0,
+      "static/runtime/webpack.js": 1,
+      "static/runtime/main.js": 2,
+      "static/runtime/polyfills.js": 3,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\_app.js": 4,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\_error.js": 5,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\about.js": 6,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\index.js": 7,
+      "styles": 8,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\_app.js": 9,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\_error.js": 10,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\about.js": 11,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\index.js": 12,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\_app.js": 4,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\_error.js": 5,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\about.js": 6,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\index.js": 7
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/about.js": 0,
+      "multi private-next-pages/index.js": 1,
+      "multi next/dist/pages/_app": 2,
+      "multi next/dist/pages/_error": 3,
+      "multi next/dist/pages/_document": 4
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4
+    }
+  },
+  "chunks": {
+    "byName": {
+      "init-server.js": 0,
+      "on-error-server.js": 1,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\_app.js": 2,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\_document.js": 3,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\_error.js": 4,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\about.js": 5,
+      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\index.js": 6,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\_app.js": 7,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\_document.js": 8,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\_error.js": 9,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\about.js": 10,
+      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\index.js": 11,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\_app.js": 2,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\_document.js": 3,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\_error.js": 4,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\about.js": 5,
+      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\index.js": 6
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

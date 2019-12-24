@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport 'semantic-ui-css/semantic.min.css';\nimport Home from '../components/Home';\nimport HeaderComp from '../components/Header';\nimport 'semantic-ui-css/semantic.min.css';\nexport default (() => __jsx(HeaderComp, null, __jsx(Home, null)));","map":null,"metadata":{},"sourceType":"module"}
