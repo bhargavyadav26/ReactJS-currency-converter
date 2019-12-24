@@ -19,21 +19,11 @@
     "byName": {
       "init-server.js": 0,
       "on-error-server.js": 1,
-      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\_app.js": 2,
-      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\_document.js": 3,
-      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\_error.js": 4,
-      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\about.js": 5,
-      "static\\d6nNCkzA5R-F7LvKaS6Qt\\pages\\index.js": 6,
-      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\_app.js": 7,
-      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\_document.js": 8,
-      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\_error.js": 9,
-      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\about.js": 10,
-      "static\\a-DWL8foNXBKaYb_6Z7wS\\pages\\index.js": 11,
-      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\_app.js": 2,
-      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\_document.js": 3,
-      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\_error.js": 4,
-      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\about.js": 5,
-      "static\\LjVbl6uJSvDgwiBNeodgT\\pages\\index.js": 6
+      "static\\xjgV7W5ym4TEfHNPeJ_4i\\pages\\_app.js": 2,
+      "static\\xjgV7W5ym4TEfHNPeJ_4i\\pages\\_document.js": 3,
+      "static\\xjgV7W5ym4TEfHNPeJ_4i\\pages\\_error.js": 4,
+      "static\\xjgV7W5ym4TEfHNPeJ_4i\\pages\\about.js": 5,
+      "static\\xjgV7W5ym4TEfHNPeJ_4i\\pages\\index.js": 6
     },
     "bySource": {},
     "usedIds": [
